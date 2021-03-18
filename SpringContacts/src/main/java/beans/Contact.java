@@ -17,7 +17,7 @@ public class Contact {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private long id;
+	private int id;
 	private String name;
 	private String phone;
 	private String relationship;
@@ -43,7 +43,7 @@ public class Contact {
 		this.relationship = relationship;
 	}
 
-	public Contact(long id, String name, String phone, String relationship) {
+	public Contact(int id, String name, String phone, String relationship) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -61,7 +61,7 @@ public class Contact {
 	/**
 	 * @param id the id to set
 	 */
-	public void setId(long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
