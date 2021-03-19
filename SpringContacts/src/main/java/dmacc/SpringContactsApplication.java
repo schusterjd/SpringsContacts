@@ -6,11 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.AbstractApplicationContext;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import beans.Address;
 import beans.Contact;
@@ -18,8 +16,6 @@ import controller.BeanConfiguration;
 import repository.ContactRepository;
 
 @SpringBootApplication
-@EnableJpaRepositories
-@EntityScan
 public class SpringContactsApplication implements CommandLineRunner {
 
 	public static void main(String[] args) {
@@ -56,10 +52,9 @@ public class SpringContactsApplication implements CommandLineRunner {
 		List<Contact> allMyContacts = repo.findAll();
 		for(Contact people: allMyContacts) {
 			System.out.println(people.toString());
-
-			((AbstractApplicationContext) appContext).close();
-
 		}
+		
+		((AbstractApplicationContext) appContext).close();
 
 	}
 }

@@ -10,5 +10,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import beans.Contact;
 
 public interface ContactRepository extends JpaRepository<Contact, Long> {
-
+	
 }
